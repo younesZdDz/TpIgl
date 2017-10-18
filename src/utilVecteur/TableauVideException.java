@@ -1,0 +1,5 @@
+package utilVecteur;
+
+class TableauVideException {
+
+}
