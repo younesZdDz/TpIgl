@@ -1,7 +1,5 @@
 package utilVecteur;
 
-import UtilVecteur.TableauVideException;
-
 class VectorHelper {
 public static int [] somme (int tab1[],int tab2[])throws exceptionTailleDiff{
 		
@@ -50,4 +48,19 @@ public static int [] somme (int tab1[],int tab2[])throws exceptionTailleDiff{
 		for (int i=0;i<tableau.length;i++)
 			tableau[i]=tableau[i]*2;
 	}
+	static public int[] TriertVecteur(int[] vecteur){
+        int i, j, cle;
+        
+        for (i = 1; i < vecteur.length; i++) {
+            cle = vecteur[i];
+            j = i;
+            while ((j >= 1) && (vecteur[j - 1] > cle)) {
+                vecteur[j]  = vecteur[j - 1] ;
+                j = j - 1;
+            }
+            vecteur[j] = cle;
+        }
+        
+        return vecteur ;
+    }
 }
