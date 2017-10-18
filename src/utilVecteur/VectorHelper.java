@@ -1,6 +1,7 @@
 package utilVecteur;
 
 class VectorHelper {// test de conflit de tp igl 
+
 public static int [] somme (int tab1[],int tab2[])throws exceptionTailleDiff{
 		
 		if (tab1.length != tab2.length) throw new exceptionTailleDiff() ;
