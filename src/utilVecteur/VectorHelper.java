@@ -2,11 +2,17 @@ package utilVecteur;
 /**
  * Classe utilitaire pour les traitement des vecteurs de type entier.
  *  
- * @author Younes Zadi
+ * @author Younes Zadi and Omar Sekouti
  *
  */
 class VectorHelper {// test de conflit de tp igl 
-
+/**
+ * cette méthode calcule la somme des deux vecteurs 
+ * @param tab1 le premier vecteur à sommer 
+ * @param tab2 le dexuième vecteur à sommer 
+ * @return est un entier qui donne la somme des vecteurs tab1 et tab2
+ * @throws exceptionTailleDiff  si les deux vecteur ont des tailles différents 
+ */
 public static int [] somme (int tab1[],int tab2[])throws exceptionTailleDiff{
 		
 		if (tab1.length != tab2.length) throw new exceptionTailleDiff() ;
@@ -18,6 +24,15 @@ public static int [] somme (int tab1[],int tab2[])throws exceptionTailleDiff{
 			}
 			return tabResul;} 
 	}
+/**
+ * cette méthode inverse les élements d'un vecteur
+ * @param tab le vecteur à inverser 
+ * <b>Exemple<b>
+ * <pre>
+ * 		soit le vecteur ={2,4,5,6}
+ *      inverseTab(vecteur) nous donne :{6,5,4,2} 
+ * </pre>
+ */
 	public static void inverseTab (int tab[]){
 		int i=0 , j= tab.length-1, caseInter;
 		while (i<j){
@@ -28,7 +43,7 @@ public static int [] somme (int tab1[],int tab2[])throws exceptionTailleDiff{
 			j--;
 			}
 	}
-	// fonction 
+
 	/**
 	 * Fonction pour le calcul du maximum et minimum simultanément d'un 
 	 * {@code tableau} d'entier.
@@ -45,6 +60,7 @@ public static int [] somme (int tab1[],int tab2[])throws exceptionTailleDiff{
 	 * on aura comme sortie {2,15}
 	 * </pre>
 	 */
+
 	public static int [] minMaxTab(int tableau[])throws TableauVideException{
 		if (tableau==null){
 			throw new TableauVideException();
@@ -84,7 +100,18 @@ public static int [] somme (int tab1[],int tab2[])throws exceptionTailleDiff{
 		for (int i=0;i<tableau.length;i++)
 			tableau[i]=tableau[i]*2;
 	}
-	static public int[] TriertVecteur(int[] vecteur){
+	/**
+	 * cette méthode trie les éléments d'un vecteur 
+	 * @param vecteur le vecteur à trier
+	 * @return le meme vecteur mais trier 
+	 * <br>
+	 * <b>Exemple<b>
+	 * <pre>
+	 * 		soit le vecteur = {4,5,9,2}
+	 * 		trierVecteur (vecteur) nous donne :{2,4,5,9} 
+	 * </pre>
+	 */
+	static public int[] trierVecteur(int[] vecteur){
         int i, j, cle;
         
         for (i = 1; i < vecteur.length; i++) {
