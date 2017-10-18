@@ -1,5 +1,5 @@
 package utilVecteur;
 
-class TableauVideException {
+class TableauVideException extends Exception{
 
 }
