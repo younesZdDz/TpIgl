@@ -11,29 +11,41 @@ class VectorHelper {// test de conflit de tp igl
  * @param tab1 le premier vecteur à sommer 
  * @param tab2 le dexuième vecteur à sommer 
  * @return est un entier qui donne la somme des vecteurs tab1 et tab2
- * @throws exceptionTailleDiff  si les deux vecteur ont des tailles différents 
+ * @throws exceptionTailleDiff  si les deux vecteur ont des tailles différents
+ * @throws TableauVideException si un des deux tableau est vide
  */
-public static int [] somme (int tab1[],int tab2[])throws exceptionTailleDiff{
+public static int [] somme (int tab1[],int tab2[])throws exceptionTailleDiff,TableauVideException{
+		if (tab1==null || tab2==null){
+			throw new TableauVideException();
+		}
+		else{
+			if (tab1.length != tab2.length) throw new exceptionTailleDiff() ;
+			else {
+				int tabResul[]= new int [tab1.length];
+				int i =0 ; 
+				for ( i=0 ;i < tab1.length ;i++){
+					tabResul[i]=tab1[i]+tab2[i];
+				}
+				return tabResul;} 
+		}
 		
-		if (tab1.length != tab2.length) throw new exceptionTailleDiff() ;
-		else {
-			int tabResul[]= new int [tab1.length];
-			int i =0 ; 
-			for ( i=0 ;i < tab1.length ;i++){
-				tabResul[i]=tab1[i]+tab2[i];
-			}
-			return tabResul;} 
 	}
 /**
  * cette méthode inverse les élements d'un vecteur
- * @param tab le vecteur à inverser 
- * <b>Exemple<b>
+ * @param tab le vecteur à inverser
+ * @throws TableauVideException si le vecteur donnée est vide 
+ * <br>
+ * <b>Exemple</b>
+ * <br>
  * <pre>
  * 		soit le vecteur ={2,4,5,6}
  *      inverseTab(vecteur) nous donne :{6,5,4,2} 
  * </pre>
  */
-	public static void inverseTab (int tab[]){
+	public static void inverseTab (int tab[])throws TableauVideException{
+		if (tab==null){
+			throw new TableauVideException();
+		}
 		int i=0 , j= tab.length-1, caseInter;
 		while (i<j){
 			caseInter= tab[i];
@@ -88,6 +100,7 @@ public static int [] somme (int tab1[],int tab2[])throws exceptionTailleDiff{
 	 * 
 	 * @param tableau le {@code tableau} dont on veut traiter.
 	 * @param n l'entier a multipilié par tous les case du {@code tableau}
+	 * @throws TableauVideException si le vecteur donnée est vide
 	 * <br>
 	 * <b>Exemple</b>
 	 * <br>
@@ -96,22 +109,30 @@ public static int [] somme (int tab1[],int tab2[])throws exceptionTailleDiff{
 	 * {4,16,18,22}
 	 * </pre>
 	 */
-	public static void mulFoisNTableau(int tableau[],int n){
+	public static void mulFoisNTableau(int tableau[],int n)throws TableauVideException{
+		if(tableau==null){
+			throw new TableauVideException();
+		}
 		for (int i=0;i<tableau.length;i++)
 			tableau[i]=tableau[i]*2;
 	}
 	/**
 	 * cette méthode trie les éléments d'un vecteur 
 	 * @param vecteur le vecteur à trier
+	 * @throws TableauVideException si le vecteur donnée est vide
 	 * @return le meme vecteur mais trier 
 	 * <br>
-	 * <b>Exemple<b>
+	 * <b>Exemple</b>
+	 * <br>
 	 * <pre>
 	 * 		soit le vecteur = {4,5,9,2}
 	 * 		trierVecteur (vecteur) nous donne :{2,4,5,9} 
 	 * </pre>
 	 */
-	static public int[] trierVecteur(int[] vecteur){
+	static public int[] trierVecteur(int[] vecteur)throws TableauVideException{
+		if(vecteur==null){
+			throw new TableauVideException();
+		}
         int i, j, cle;
         
         for (i = 1; i < vecteur.length; i++) {
@@ -120,6 +141,7 @@ public static int [] somme (int tab1[],int tab2[])throws exceptionTailleDiff{
             while ((j >= 1) && (vecteur[j - 1] > cle)) {
                 vecteur[j]  = vecteur[j - 1] ;
                 j = j - 1;
+                
             }
             vecteur[j] = cle;
         }
