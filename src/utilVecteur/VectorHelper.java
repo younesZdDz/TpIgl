@@ -120,6 +120,7 @@ public static int [] somme (int tab1[],int tab2[])throws exceptionTailleDiff{
             while ((j >= 1) && (vecteur[j - 1] > cle)) {
                 vecteur[j]  = vecteur[j - 1] ;
                 j = j - 1;
+                
             }
             vecteur[j] = cle;
         }
