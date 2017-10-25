@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package utilVecteur;//commentaire 2 
+=======
+package utilVecteur;//commentaire 1
+>>>>>>> 5b383a492ecc2cefc58a0bcc0d5e7c5bf77721bd
 /**
  * Classe utilitaire pour les traitement des vecteurs de type entier.
  *  
