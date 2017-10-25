@@ -1,4 +1,4 @@
-package utilVecteur;
+package utilVecteur;//commentaire 2 
 /**
  * Classe utilitaire pour les traitement des vecteurs de type entier.
  *  
